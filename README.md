@@ -3,10 +3,10 @@
 
 ### The main colors for this website are:
 
-Button/Link: #5771FF
-Background: #F5F7FA 
-Primary Text: #1E1E2C
-Accent (Highlight or CTA):#FF6B6B
+#### Button/Link: #5771FF
+#### Background: #F5F7FA 
+#### Primary Text: #1E1E2C
+#### Accent (Highlight or CTA):#FF6B6B
 
 
 
