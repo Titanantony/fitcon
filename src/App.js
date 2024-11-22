@@ -2,6 +2,7 @@ import './App.css';
 import { ThemeProvider } from "styled-components";
 import NavBar from './ui/NavBar';
 import Homepage from './ui/Homepage';
+import Footer from './ui/Footer';
 
 
 const theme = {
@@ -17,6 +18,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <NavBar />
       <Homepage />
+      <Footer />
     </ThemeProvider>
   );
   // return (
