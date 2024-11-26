@@ -1,6 +1,8 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import image from "../images/image.png";
+import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap
+import "../styles/Homepage.css";
 
 // Keyframes for animation
 const fadeIn = keyframes`
@@ -20,14 +22,18 @@ const HeroContainer = styled.section`
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
-  background: ${({ theme }) => theme.colors.secondary};
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const TextContent = styled.div`
-@media (min-width: 450px) {
-    max-width: 50%;
-}
-  
+  max-width: 50%;
+  padding: 1rem;
+
   h1 {
     font-size: 3rem;
     font-weight: bold;
@@ -41,8 +47,8 @@ const TextContent = styled.div`
 
   button {
     padding: 0.75rem 1.5rem;
-    background-color: ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }) => theme.colors.textLight};
+    background-color: ${({ theme }) => theme.colors.primary || "#007bff"};
+    color: ${({ theme }) => theme.colors.textLight || "#fff"};
     font-size: 1rem;
     border: none;
     border-radius: 5px;
@@ -53,9 +59,10 @@ const TextContent = styled.div`
       background-color: #e64a19;
     }
   }
-  @media (max-width: 450px) {
-    width: 100%;
-}
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 const ImageContent = styled.div`
@@ -66,28 +73,40 @@ const ImageContent = styled.div`
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     animation: ${fadeIn} 2s ease-in;
 
+    @media (max-width: 768px) {
+      height: auto;
+      max-width: 80%;
+    }
+
     @media (max-width: 450px) {
-    display: none;
-}
+      display: none;
+    }
   }
 `;
 
 // Component
 const Homepage = () => {
   return (
-    <HeroContainer>
-      <TextContent>
-        <h1>Fitness & Health Training</h1>
-        <p>
-          Strong is the simplest, most intuitive workout tracking experience.
-          Trusted by over 3 million users worldwide.
-        </p>
-        <button>Get Started</button>
-      </TextContent>
-      <ImageContent>
-        <img src={image} alt="Man exercising" />
-      </ImageContent>
-    </HeroContainer>
+    <div className="homepage container-fluid p-4"> {/* Bootstrap container and padding */}
+      <HeroContainer className="row align-items-center"> {/* Bootstrap row */}
+        {/* Text Content */}
+        <TextContent className="col-md-6 col-sm-12">
+          <h1 className="h11">Fitness & Health Training</h1>
+          <p>
+            Strong is the simplest, most intuitive workout tracking experience.
+            Trusted by over 3 million users worldwide.
+          </p>
+          <button className="btn btn-primary" style={{
+            background: "#5771ff",
+          }}>Get Started</button>
+        </TextContent>
+
+        {/* Image Content */}
+        <ImageContent className="col-md-6 col-sm-12 ml-auto"> {/* Aligns to the right */}
+          <img src={image} alt="Man exercising" />
+        </ImageContent>
+      </HeroContainer>
+    </div>
   );
 };
 
