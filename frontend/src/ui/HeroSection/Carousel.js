@@ -13,12 +13,12 @@ const Carousel = ({ images }) => {
             alt={`Slide ${index + 1}`}
             className="d-block w-100 carousel-img"
             style={{
-              height: "400px", // Adjust height as needed
+              height: "500px", // Adjust height as needed
               objectFit: "cover", // Prevent distortion
             }}
           />
           <BootstrapCarousel.Caption>
-            <p className="caption" id= "caption" >A Brighter Future Starts With The Healthy Life</p>
+            <p id= "caption" >A Brighter Future Starts With The Healthy Life</p>
           </BootstrapCarousel.Caption>
         </BootstrapCarousel.Item>
       ))}
