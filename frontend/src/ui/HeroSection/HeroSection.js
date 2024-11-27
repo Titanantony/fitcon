@@ -13,7 +13,7 @@ const HeroSection = ({ title, subtitle, buttonText, images }) => {
           <Col md={6} className="text-center text-md-start">
             <img src={logo} alt="Athleticon Logo" className="mb-3" />
             <h1>{title}</h1>
-            <p>{subtitle}</p>
+            <p>{subtitle}</p> 
             {/* <button className="btn btn-primary">{buttonText}</button> */}
           </Col>
 

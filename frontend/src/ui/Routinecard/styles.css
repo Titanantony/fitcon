@@ -3,6 +3,26 @@ body {
     background-color: #f8f9fa;
 }
 
+header h1 {
+    color: #212529;
+}
+
+.custom-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.custom-grid>.card-small {
+    grid-column: span 1;
+    height: 200px;
+}
+
+.custom-grid>.card-large {
+    grid-column: span 1;
+    height: 420px;
+}
+
 .card {
     border: none;
     border-radius: 10px;
@@ -20,8 +40,4 @@ body {
 
 .card-text {
     color: #666;
-}
-
-header h1 {
-    color: #212529;
 }
