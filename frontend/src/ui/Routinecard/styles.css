@@ -1,0 +1,27 @@
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #f8f9fa;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    background: #fff;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    color: #333;
+}
+
+.card-text {
+    color: #666;
+}
+
+header h1 {
+    color: #212529;
+}
